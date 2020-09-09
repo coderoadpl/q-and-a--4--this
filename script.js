@@ -6,20 +6,31 @@ console.log('Hello world!')
 // this points always to context === object
 console.log(this)
 
-class Greeter {
-  constructor(name){
-    this.name = name
-  }
+// class Greeter {
+//   constructor(name){
+//     this.name = name
+//   }
 
-  sayHello(){
-    console.log('Hello ' + this.name + '!' )
-  }
+//   sayHello(){
+//     console.log('Hello ' + this.name + '!' )
+//   }
+// }
+
+function Greeter(name) {
+  this.name = name
+}
+Greeter.prototype.sayHello = function () {
+  console.log('Hello ' + this.name + '!')
 }
 
 const greeter1 = new Greeter('Ola')
 const greeter2 = new Greeter('Ala')
 const greeter3 = new Greeter('Ela')
 
-console.log(greeter1.sayHello())
-console.log(greeter2.sayHello())
-console.log(greeter3.sayHello())
+greeter1.sayHello()
+greeter2.sayHello()
+greeter3.sayHello()
+
+var sayHello = greeter1.sayHello
+window.sayHello()
+sayHello()
