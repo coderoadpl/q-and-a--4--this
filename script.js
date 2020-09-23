@@ -34,3 +34,15 @@ greeter3.sayHello()
 var sayHello = greeter1.sayHello
 window.sayHello()
 sayHello()
+
+console.dir(sayHello)
+console.dir(Greeter.prototype.sayHello === sayHello)
+
+sayHello.call({ name: 'Call' })
+sayHello.apply({ name: 'Apply' })
+
+const sayHelloBound = sayHello.bind({ name: 'Bind' })
+console.log(sayHelloBound === sayHello)
+sayHelloBound()
+
+sayHelloBound.call({ name: 'Call' })
