@@ -20,6 +20,23 @@ class Counter {
     h1.innerText = this.count
     button.innerText = '+'
 
+    // 3.
+    // const self = this
+
+    button.addEventListener(
+      'click',
+      () => this.inc()
+      // 3.
+      // function () {
+      //   self.count = self.count + 1
+      //   self.render()
+      // }
+      // 2.
+      // () => this.inc()
+      // 1.
+      // this.inc.bind(this)
+    )
+
     document.body.appendChild(h1)
     document.body.appendChild(button)
 
